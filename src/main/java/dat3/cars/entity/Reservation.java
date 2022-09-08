@@ -24,12 +24,18 @@ public class Reservation {
     @ManyToOne
     Member member;
 
+    @ManyToOne
+    Car car;
+
     @CreationTimestamp
     LocalDateTime reservationDate;
 
     LocalDate rentalDate;
 
 
-
-
+    public Reservation(Member member, Car car, LocalDate rentalDate) {
+        this.member = member;
+        this.car = car;
+        this.rentalDate = rentalDate;
+    }
 }
